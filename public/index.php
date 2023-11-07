@@ -5,6 +5,7 @@ use App\Router\Router;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Twig\Extension\DebugExtension;
+use App\WeatherApi;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -13,7 +14,17 @@ $twig = new Environment($loader);
 
 $twig->addExtension(new DebugExtension());
 
-$currentDate = new DateTime();
+
+$weatherApi = new WeatherApi();
+$weatherData = $weatherApi->fetchWeather('Berlin');
+
+$twig->addGlobal('weatherData', $weatherData);
+
+$berlinTimeZone = new DateTimeZone('Europe/Berlin');
+$berlinTime = new DateTime('now', $berlinTimeZone);
+$berlinCurrentTime = $berlinTime->format('H:i:s');
+
+$twig->addGlobal('berlinCurrentTime', $berlinCurrentTime);
 
 $routeInfo = Router::dispatch();
 

@@ -9,24 +9,19 @@ a {
     text-decoration: none;
 }
 
-nav {
+.navbar {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     background-color: black;
     color: white;
     height: 60px;
+    align-items: center;
+    padding: 0 20px;
 }
 
 nav a {
     text-transform: uppercase;
-    font-weight: lighter;
-    font-size: 26px;
-}
-
-nav div {
-    justify-content: center;
-    align-items: center;
+    font-weight: bold;
+    font-size: 28px;
 }
 
 nav li {
@@ -35,6 +30,34 @@ nav li {
 
 nav a {
     color: white;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 40px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+.search-input {
+    margin-right: 10px;
+
+}
+
+
+#search-form {
+    display: flex;
+    align-items: center;
+}
+
+#search-form input {
+    margin-right: 10px;
 }
 
 header {
@@ -50,7 +73,7 @@ section {
 }
 
 section div,
-.episode{
+.episode {
     display: flex;
     justify-content: left;
     background-color: white;
@@ -61,6 +84,7 @@ section div,
     padding: 20px;
     border-radius: 10px;
 }
+
 .character-title {
     text-align: center;
     width: 100%;
@@ -68,6 +92,7 @@ section div,
     padding: 20px;
     border-radius: 10px;
 }
+
 .character {
     max-width: 100px;
 }
@@ -119,24 +144,10 @@ footer {
     height: 40px;
 }
 
-#search-form {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-}
-
-#search-form input {
-    margin-right: 10px;
-}
-
-nav ul {
-    display: flex;
-}
-
-nav ul li {
-    margin-right: 10px;
-}
-
-nav ul li:last-child {
-    margin-right: 0;
+.navbar-weather-time {
+    background-color: grey;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
 }

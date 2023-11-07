@@ -137,7 +137,7 @@ class Api
             }
         }
 
-        return null; // Episode not found
+        return null;
     }
 }
 
