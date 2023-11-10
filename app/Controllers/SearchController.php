@@ -29,7 +29,4 @@ class SearchController
             'characters' => $characters,
         ]);
     }
-
 }
-
-

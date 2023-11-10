@@ -19,7 +19,7 @@ class SeasonController
         return new Response(
             'seasons/index',
             [
-                'seasons' =>  $this->api->fetchSeasons(),
+                'seasons' => $this->api->fetchSeasons(),
                 'header' => 'All Seasons'
             ]
         );
@@ -27,12 +27,12 @@ class SeasonController
 
     public function show(array $vars): Response
     {
-        $id = (int) $vars['id'];
+        $id = (int)$vars['id'];
 
         return new Response(
             'seasons/show',
             [
-                'episodes' =>  $this->api->fetchEpisodesBySeasonId($id),
+                'episodes' => $this->api->fetchEpisodesBySeasonId($id),
                 'header' => 'All Seasons'
             ]
         );

@@ -18,7 +18,7 @@ class EpisodeController
 
     public function show(array $vars): Response
     {
-        $id = (int) $vars['id'];
+        $id = (int)$vars['id'];
 
         $episode = $this->api->fetchEpisode($id);
 

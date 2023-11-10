@@ -12,7 +12,6 @@ class WeatherApi
     private Client $client;
 
     private const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
-    private const API_KEY = '6891f499c77e1c03df0b56d48fa8ca51';
 
     public function __construct()
     {
@@ -23,7 +22,7 @@ class WeatherApi
 
     public function fetchWeather(string $city): ?Weather
     {
-        $apiKey = self::API_KEY;
+        $apiKey = $_ENV['WEATHER_API_KEY'];
         $url = self::API_URL . "?q=$city&appid=$apiKey";
 
         $response = $this->client->get($url);
