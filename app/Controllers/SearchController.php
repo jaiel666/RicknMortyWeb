@@ -16,13 +16,9 @@ class SearchController
         $this->api = new Api();
     }
 
-    public function show(array $vars): Response
+    public function show(): Response
     {
         $episodeCode = $_GET['id'] ?? null;
-
-        if ($episodeCode === null) {
-             new Response('error', ['message' => 'Episode code not provided']);
-        }
 
         $episode = $this->api->fetchEpisodeByCode($episodeCode);
 
