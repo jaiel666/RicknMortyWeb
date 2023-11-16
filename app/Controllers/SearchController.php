@@ -18,7 +18,11 @@ class SearchController
 
     public function show(array $vars): Response
     {
-        $episodeCode = $vars['id'];
+        $episodeCode = $_GET['id'] ?? null;
+
+        if ($episodeCode === null) {
+             new Response('error', ['message' => 'Episode code not provided']);
+        }
 
         $episode = $this->api->fetchEpisodeByCode($episodeCode);
 
@@ -29,7 +33,4 @@ class SearchController
             'characters' => $characters,
         ]);
     }
-
 }
-
-
